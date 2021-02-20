@@ -1,27 +1,44 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark>
+      <h1 class="d-flex align-center">
+        Jackpot Online
+      </h1>
+
+      <v-spacer></v-spacer>
+
+      <v-btn text>
+        <h3 class="mr-2">New Game</h3>
+        <v-icon>mdi-gamepad</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <aside style="position: relative; height: 100%">
+        <the-main-game></the-main-game>
+        <the-credit-button :credits="clientCredits"></the-credit-button>
+      </aside>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheMainGame from './components/TheMainGame.vue';
+import TheCreditButton from './components/TheCreditButton.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    TheMainGame,
+    TheCreditButton,
+  },
+  data() {
+    return {
+      clientCredits: 10, 
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

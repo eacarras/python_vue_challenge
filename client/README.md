@@ -1,24 +1,24 @@
-# client
+# Jackpot Online
+This is the client side of the jackpot game made with VueJs and Vuetify to help with the design.
 
-## Project setup
+## Dependecies
+- Node v10.20.0 at least
+- Yarn v1.22.5
+
+## Run Project
+Just run the following commands. It will upload in the localhost:8080
 ```
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
 yarn serve
 ```
 
-### Compiles and minifies for production
+## Other commands
+To build the app just run:
 ```
 yarn build
 ```
 
-### Lints and fixes files
+To fix the eslint just run:
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
