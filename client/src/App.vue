@@ -18,7 +18,10 @@
 
     <v-main>
       <aside style="position: relative; height: 100%">
-        <the-main-game></the-main-game>
+        <the-main-game
+          @on-begin-game="sendRequest"
+          :cards="cardsData"
+          :isLoading="isLoading"></the-main-game>
         <the-credit-button :credits="clientCredits"></the-credit-button>
       </aside>
     </v-main>
@@ -37,8 +40,20 @@ export default {
   },
   data() {
     return {
-      clientCredits: 10, 
+      clientCredits: 10,
+      cardsData: [
+        {value: 'C', path: require('./assets/cherry.svg')},
+        {value: 'L', path: require('./assets/lemon.svg')},
+        {value: 'O', path: require('./assets/orange.svg')}
+      ],
+      isLoading: false,
     };
   },
+  methods: {
+    sendRequest() {
+      // TODO: SEND REQUEST TO BACK
+      this.isLoading = true;
+    }
+  }
 };
 </script>
