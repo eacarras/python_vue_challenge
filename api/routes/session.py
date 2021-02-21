@@ -14,7 +14,6 @@ def new_session():
   session_token = token_hex(TOKEN_LENGTH)
   # TODO: SEND TOKEN TO DATABASE
   return jsonify({
-    'status': 201,
     'message': 'New session created successfully',
     'token': session_token,
-  })
+  }), 201
