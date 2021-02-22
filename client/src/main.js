@@ -1,8 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
 import vuetify from './plugins/vuetify';
+import firebase from 'firebase/app';
 
-Vue.config.productionTip = false
+import App from './App.vue'
+import firebaseConfig from './firebase';
+
+Vue.config.productionTip = process.env.VUE_APP_API_NODE_ENV === 'PROD';
+firebase.initializeApp(firebaseConfig);
 
 new Vue({
   vuetify,
